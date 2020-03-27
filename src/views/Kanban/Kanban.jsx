@@ -2,6 +2,7 @@ import React from 'react';
 
 import './Kanban.css';
 import CardList from '../../components/CardsList/CardList';
+import CardModal from '../../components/CardModal/CardModal';
 
 // components
 
@@ -9,14 +10,19 @@ export default class Kanban extends React.Component {
   state = {
     showAddList: false,
     canAddList: false,
+    modal: {
+      modalIsOpen: false,
+      card: null,
+      list: ''
+    },
     lists: [
       {id:1, title:"Pendiente", cards: [
-              {id:1, title:"Mi primer tarea colocada en la primer tarjeta"},
-              {id:2, title:"Mi primer tarea colocada en la primer tarjeta"},
-              {id:3, title:"Mi primer tarea colocada en la primer tarjeta esta tarjeta tiene mas texto para ver como se ve"},
+              {id:1, title:"Mi primer tarea colocada en la primer tarjeta", description:"Una pequeña descripción", date: "26/03/2020", members: [], comments: [{id:1, content: "Mi comentario muy descriptivo"}]},
             ], canaddcards: true},
-      {id:2, title:"En progreso", cards: [], canaddcards: true},
-      {id:3, title:"Finalizado", cards: [{id:4, title:"Algo para mostrar al final"}], canaddcards: false},
+      {id:2, title:"En progreso", cards: [
+              {id:1, title:"Algo que mostrar en la tarjeta", description:"Descripción exajerada para poner algo que tenga bastante texto", date: "03/03/2020", members: [], comments: []},
+            ], canaddcards: true},
+      {id:3, title:"Finalizado", cards: [], canaddcards: false},
     ],
     nexListId: 4,
     listTitle: ''
@@ -51,11 +57,20 @@ export default class Kanban extends React.Component {
       }
     })
   }
+
+  handleOpenModal = (card, list) => {
+    this.setState({modal: {modalIsOpen: true, card: card, list: list}})
+  }
+
+  handleCloseModal = () => {
+    this.setState({modal: {modalIsOpen: false, card: null, list: ''}})
+  }
+
   render() {
     return (
       <div className="Kanban">
         {this.state.lists.map( cardlist => {
-          return <CardList key={cardlist.id} title={cardlist.title} cards={cardlist.cards} canAddCards={cardlist.canaddcards} />
+          return <CardList key={cardlist.id} title={cardlist.title} cards={cardlist.cards} canAddCards={cardlist.canaddcards} openModal={this.handleOpenModal} />
         }
         )}
         { this.state.canAddList && (
@@ -81,6 +96,7 @@ export default class Kanban extends React.Component {
           )}
         </div>
         )}
+        <CardModal dataModal={this.state.modal} onClose={this.handleCloseModal}/>
       </div>
     )
   }

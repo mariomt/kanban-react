@@ -4,27 +4,41 @@ import './CardList.css';
 
 export default class CardList extends React.Component {
   state = {
-    addCard: false
+    addCard: false,
+    titleCard: ''
   }
 
-  handleOnClickAdd = e => {
+  handleOnClickAddList = e => {
     this.setState({addCard: true});
   }
 
   handleFocusOut = e => {
     if(!e.target.value) {
-      this.setState({ addCard: false });
+      this.setState({ addCard: false});
     }
-
   }
 
   handleEnterKey = e => { 
     if(e.keyCode === 13 ) {
       e.preventDefault();
-      console.log(e.target.value);
-      e.target.value='';
-      this.setState({ addCard: false });
+      this.saveNewCard();
+      
+      this.setState({ addCard: false, titleCard: '' });
     }
+  }
+
+  handleOnClickSaveNewCard = e => {
+
+    this.saveNewCard();
+    this.setState({ addCard: false, titleCard: '' });
+  }
+  saveNewCard = () => {
+    console.log(this.state.titleCard)
+  }
+
+  handleOnchange = e =>{
+    this.setState({[e.target.name]:e.target.value})
+    
   }
 
   render() {
@@ -35,19 +49,19 @@ export default class CardList extends React.Component {
         </div>
         <div className="CardList__content">
           { this.props.cards.map( card => {
-            return <Card key={card.id} title={card.title}/>
+            return <Card key={card.id} card={card} list={this.props.title} onClick={this.props.openModal} />
           })}
         </div>
         {this.props.canAddCards && (
           <div className="CardList__newCard">
             {this.state.addCard && (
               <div className="CardList__addCard">
-                <textarea autoFocus onBlur={this.handleFocusOut} onKeyDown={this.handleEnterKey} className="CardList__textarea"></textarea>
-                <button className="btn btn-primary">Guardar</button>
+                <textarea onChange={this.handleOnchange} name="titleCard" autoFocus onBlur={this.handleFocusOut} onKeyDown={this.handleEnterKey} className="CardList__textarea" value={this.state.titleCard}></textarea>
+                <button onClick={this.handleOnClickSaveNewCard} className="btn btn-primary">Guardar</button>
               </div>
             )}
             {!this.state.addCard && (
-              <div onClick={this.handleOnClickAdd} className="CardList__add">
+              <div onClick={this.handleOnClickAddList} className="CardList__add">
                 <p>+ Añadir tarea</p>
               </div>
             )}
@@ -61,8 +75,8 @@ export default class CardList extends React.Component {
 
 function Card(props) {
   return (
-    <div className="CardList__card">
-      <p>{props.title}</p>
+    <div className="CardList__card" onClick={() => props.onClick(props.card, props.list)}>
+      <p>{props.card.title}</p>
     </div>
   )
 }

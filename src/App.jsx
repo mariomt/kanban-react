@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import './App.css';
+import '../node_modules/@fortawesome/fontawesome-free/css/all.min.css';
 
 // Components
 import Layout from './components/Layout/Layout';

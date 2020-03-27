@@ -1,0 +1,222 @@
+
+.CardModal {
+  box-sizing: border-box;
+  position: relative;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #f4f5f7;
+  width: 100%;
+  max-width: 750px;
+  padding: 10px 10px;
+  border-radius: 2px;
+}
+
+.CardModal i {
+  display: flex;
+  align-items: center;
+  color: rgb(73, 73, 73);
+  margin: 0 10px;
+  font-size: 1.3em;
+}
+
+.CardModal__change-list {
+  text-transform: uppercase;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+
+.CardModal__title input,
+.CardModal__description-textarea,
+.CardModal__comment-input {
+  color: rgb(73, 73, 73);
+  width: calc(100% - 70px);
+  border: none;
+  font-size: 1.3em;
+  font-weight: 600;
+  padding: 4px 5px;
+  background-color: #f4f5f7;
+}
+
+.CardModal input:focus,
+.CardModal textarea:focus {
+  outline: 2px solid var(--primary-color);
+  background-color: #fff;
+}
+
+/* -------------- */
+/*  TITLE */
+/* -------------- */
+
+.CardModal__title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding-top: 5px;
+  margin-bottom: 10px;
+}
+
+
+.CardModal__title p {
+  margin: 0 45px;
+  font-size: .9em;
+  color: rgb(73, 73, 73);
+}
+
+/* -------------- */
+/* MEMBERS */
+/* -------------- */
+
+.CardModal__users-section {
+  font-size: .8em;
+  padding-left: 40px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  
+}
+
+.CardModal__users-section p{
+  color: rgb(124, 124, 124);
+  margin: 0;
+  margin-bottom: 4px;
+  margin-left: 5px;
+}
+
+.CardModal__users-wraper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.CardModel__users-content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.CardModal__add-user:hover,
+.CardModal__user-icon {
+  background-color: rgba(0, 0,0, 0.1);
+  cursor: pointer;
+}
+
+.CardModal__add-user,
+.CardModal__user-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-weight: 500;
+  font-size: .9em;
+  background-color: #eaecf0;
+  margin-right: 5px;
+}
+
+.CardModal__user-icon {
+  font-size: 1.1em;
+  font-weight: 700;
+  background-color: rgba(0, 0,0, 0.1);
+}
+
+.member-card .CardModal__user-icon {
+  width: 35px;
+  height: 35px;
+  font-size: .9em;
+}
+
+
+
+/* -------------- */
+/* METADATA */
+/* -------------- */
+
+.CardModal-metadata{
+  font-size: .9em;
+  color: rgb(73, 73, 73);
+  margin-left: 45px;
+  margin-bottom: 25px;
+}
+
+.CardModal-metadata p {
+  margin: 0;
+}
+
+.CardModal-metadata p:hover {
+  cursor: default;
+}
+
+.CardModal-metadata p span {
+  font-size: 1.1em;
+}
+
+
+/* -------------- */
+/* DESCRIPTION */
+/* -------------- */
+
+.CardModal__description {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin-bottom: 25px;
+}
+
+.CardModal__description i {
+  margin-top: 5px;
+
+}
+
+.CardModal__description-textarea {
+  box-sizing: border-box;
+  width: calc(100% - 50px);
+  font-weight: 400;
+  min-height: 80px;
+  background-color: #ededee;
+  font-size: 1.1em;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+/* -------------- */
+/* COMMENT */
+/* -------------- */
+.CardModal__comment {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+}
+
+.CardModal__comment-input {
+  background-color: #fff;
+  border: 1px solid rgba(0, 0,0, 0.2);
+  font-weight: 400;
+  font-size: 1.1em;
+  /* box-shadow: 0 1px 5px -2px rgba(0, 0,0, 0.7); */
+}
+
+
+
+.CardModal__comment-post {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.CardModal__comment-post i {
+  margin-top: 5px;
+}
+
+.CardModal__comment-post p {
+  box-sizing: border-box;
+  padding: 5px 10px;
+  color: rgb(73, 73, 73);
+  margin: 0;
+  width: 85%;
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 0 1px 5px -2px rgba(0, 0,0, 0.7);
+}
