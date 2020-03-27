@@ -20,7 +20,7 @@ export default class Kanban extends React.Component {
               {id:1, title:"Mi primer tarea colocada en la primer tarjeta", description:"Una pequeña descripción", date: "26/03/2020", members: [], comments: [{id:1, content: "Mi comentario muy descriptivo"}]},
             ], canaddcards: true},
       {id:2, title:"En progreso", cards: [
-              {id:1, title:"Algo que mostrar en la tarjeta", description:"Descripción exajerada para poner algo que tenga bastante texto", date: "03/03/2020", members: [], comments: []},
+              {id:1, title:"Algo que mostrar en la tarjeta", description:"Descripción exajerada para poner algo que tenga bastante texto", date: "03/03/2020", members: [{id:1, firstName: "José", lastName:"Ortega"}], comments: []},
             ], canaddcards: true},
       {id:3, title:"Finalizado", cards: [], canaddcards: false},
     ],

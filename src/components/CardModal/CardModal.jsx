@@ -24,7 +24,11 @@ export default function CardModal(props) {
         </div>
         <div className="CardModal__users-wraper">
           <div className="CardModel__users-content">
-            <div className="CardModal__user-icon"><span>MM</span></div>
+            {card? card.members.map(member => {
+              return (
+                <div className="CardModal__user-icon"><span>{member.firstName.charAt(0)}{member.lastName.charAt(0)}</span></div>
+              )
+            }):''}
           </div>
           
           <div className="CardModal__add-user">
