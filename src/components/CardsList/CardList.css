@@ -1,0 +1,45 @@
+
+.CardList {
+  box-sizing: border-box;
+  background-color: var(--cardList-background);
+  width: 100%;
+  max-width: 500px;
+  height: fit-content;
+  color: #6d798f;
+  border-radius: 3px;
+  padding: .8em .5em;
+  box-shadow: 0 1px 5px -2px rgba(0, 0,0, 0.8);
+}
+
+.CardList__title h3 {
+  margin-top: 0;
+}
+
+.CardList__add {
+  padding: 5px;
+  border-radius: 4px;
+  margin-top: 15px;
+}
+
+.CardList__add:hover {
+  background-color: rgba(70, 70, 70, 0.1);
+  cursor: pointer;
+}
+
+
+.CardList__add p {
+  margin: 0;
+  font-size: 1.1em;
+}
+
+.CardList__textarea {
+  box-sizing: border-box;
+  min-width: 100%;
+  max-width: 100%;
+  min-height: 60px;
+  max-height: 150px;
+}
+
+.CardList__addCard button{
+  display: block;
+}

@@ -1,38 +1,49 @@
-.App {
-  text-align: center;
+:root {
+  --primary-color:#004990;
+  --secondary-color:#f7a11a;
+  --tertiary-color: #fff;
+  --primary-text-color: #fff;
+
+  /*cardList*/
+  --cardList-background: #ebecf0;
+  --header-height: 60px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+/* botones */
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.btn {
+  cursor: pointer;
+  border: none;
   color: white;
+  padding: .7em;
+  border-radius: 3px;
+  box-shadow: inset 0 -.2em rgba(0, 0,0, 0.3);
+  transition-duration: 10ms;
+  transition-timing-function: ease-in;
+  will-change: transform;
+  outline: none;
 }
 
-.App-link {
-  color: #61dafb;
+.btn.btn-primary {
+  background-color: #3faf3f;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn.btn-primary:focus {
+  background-color: #3faf3f;
 }
+
+.btn.btn-danger {
+  background-color: rgb(255, 31, 31);
+}
+
+.btn:active {
+  box-shadow: inset 0 -.1em rgba(0, 0,0, 0.3);
+  transform: translateY(.1em);
+}
+

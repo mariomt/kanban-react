@@ -1,11 +1,24 @@
 import React from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import './App.css';
+
+// Components
+import Layout from './components/Layout/Layout';
+import Kanban from './views/Kanban/Kanban';
+import Home from './views/Home/Home';
 
 function App() {
   return (
     <div className="App">
-      <h1>Mi app</h1>
+      <BrowserRouter>
+        <Layout>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/Kanban" component={Kanban} />
+          </Switch>
+        </Layout>
+      </BrowserRouter>
     </div>
   );
 }

@@ -1,0 +1,29 @@
+.Kanban {
+  box-sizing: border-box;
+  min-height: 100%;
+  padding: 20px 20px 0;
+  width: fit-content;
+  min-width: 100%;
+  
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 280px;
+  column-gap: 1em;
+  justify-content: center;
+}
+
+
+.Kanban__addList-option {
+  background-color: rgba(97, 97, 97, 0.3);
+  height: fit-content;
+  min-height: 30px;
+  line-height: 30px;
+  text-align: center;
+  color: rgb(71, 71, 71);
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.Kanban__addList-option:hover {
+  background-color: rgba(97, 97, 97, 0.5);
+}

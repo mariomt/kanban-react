@@ -1,0 +1,17 @@
+
+.Layout {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: var(--header-height) 1fr;
+}
+
+.Layout__header {
+  background-color: var(--primary-color);
+  color: var(--primary-text-color);
+}
+
+.Layout__content {
+  padding: 0;
+  overflow-x: auto;
+}
