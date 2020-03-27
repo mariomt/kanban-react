@@ -12,6 +12,9 @@ function Layout(props) {
       <section className="Layout__content">
         {props.children}
       </section>
+      <footer className="Layout__footer">
+        <p>Centro de sistemas de tecnologías de la información</p>
+      </footer>
     </div>
   );
 }

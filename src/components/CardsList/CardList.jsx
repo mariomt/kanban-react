@@ -34,7 +34,9 @@ export default class CardList extends React.Component {
           <h3>{this.props.title}</h3>
         </div>
         <div className="CardList__content">
-          
+          { this.props.cards.map( card => {
+            return <Card key={card.id} title={card.title}/>
+          })}
         </div>
         {this.props.canAddCards && (
           <div className="CardList__newCard">
@@ -44,12 +46,23 @@ export default class CardList extends React.Component {
                 <button className="btn btn-primary">Guardar</button>
               </div>
             )}
-            <div onClick={this.handleOnClickAdd} className="CardList__add">
-              <p>+ Añadir tarea</p>
-            </div>
+            {!this.state.addCard && (
+              <div onClick={this.handleOnClickAdd} className="CardList__add">
+                <p>+ Añadir tarea</p>
+              </div>
+            )}
           </div>
         )}
       </div>
     )
   }
+}
+
+
+function Card(props) {
+  return (
+    <div className="CardList__card">
+      <p>{props.title}</p>
+    </div>
+  )
 }

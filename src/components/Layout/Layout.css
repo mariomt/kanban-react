@@ -3,7 +3,7 @@
   min-height: 100vh;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: var(--header-height) 1fr;
+  grid-template-rows: var(--header-height) calc(100vh - var(--header-height) - var(--footer-height)) var(--footer-height);
 }
 
 .Layout__header {
@@ -13,5 +13,19 @@
 
 .Layout__content {
   padding: 0;
+  overflow-y: auto;
   overflow-x: auto;
+}
+
+.Layout__footer {
+  display: flex;
+  padding: 0 10px;
+  align-items: center;
+  background-color: var(--secondary-color);
+}
+
+.Layout__footer p {
+  margin:0;
+  font-size: 1.2em;
+  color: var(--primary-text-color)
 }
