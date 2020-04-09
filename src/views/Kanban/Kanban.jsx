@@ -1,12 +1,44 @@
 import React from 'react';
+import { useQuery } from '@apollo/react-hooks';
+import { gql } from 'apollo-boost';
 
 import './Kanban.css';
 import CardList from '../../components/CardsList/CardList';
 import CardModal from '../../components/CardModal/CardModal';
 
-// components
+// queries 
+const LIST_QUERY = gql`{
+    getLists{
+      _id
+      title
+      tasks{
+        _id
+        title
+        description
+        date,
+        members {
+          _id
+          firstName
+          lastName
+        }
+        comments {
+          _id
+          content
+        }
+      }
+      canAddCards
+    }
+}`;
 
-export default class Kanban extends React.Component {
+export default  function Kanban(props) {
+  const { loading, error, data } = useQuery(LIST_QUERY);
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error :(</p>;
+    console.log(data.getLists);
+  return <KanbanUI data={data.getLists}/>
+}
+
+class KanbanUI extends React.Component {
   state = {
     showAddList: false,
     canAddList: false,
@@ -15,17 +47,13 @@ export default class Kanban extends React.Component {
       card: null,
       list: ''
     },
-    lists: [
-      {id:1, title:"Pendiente", cards: [
-              {id:1, title:"Mi primer tarea colocada en la primer tarjeta", description:"Una pequeña descripción", date: "26/03/2020", members: [], comments: [{id:1, content: "Mi comentario muy descriptivo"}]},
-            ], canaddcards: true},
-      {id:2, title:"En progreso", cards: [
-              {id:1, title:"Algo que mostrar en la tarjeta", description:"Descripción exajerada para poner algo que tenga bastante texto", date: "03/03/2020", members: [{id:1, firstName: "José", lastName:"Ortega"}], comments: []},
-            ], canaddcards: true},
-      {id:3, title:"Finalizado", cards: [], canaddcards: false},
-    ],
+    lists: [],
     nexListId: 4,
     listTitle: ''
+  }
+
+  componentDidMount() {
+    this.setState({lists: this.props.data});
   }
 
   onChange = e => {
@@ -70,7 +98,7 @@ export default class Kanban extends React.Component {
     return (
       <div className="Kanban">
         {this.state.lists.map( cardlist => {
-          return <CardList key={cardlist.id} title={cardlist.title} cards={cardlist.cards} canAddCards={cardlist.canaddcards} openModal={this.handleOpenModal} />
+          return <CardList key={cardlist._id} title={cardlist.title} cards={cardlist.tasks} canAddCards={cardlist.canAddCards} openModal={this.handleOpenModal} />
         }
         )}
         { this.state.canAddList && (

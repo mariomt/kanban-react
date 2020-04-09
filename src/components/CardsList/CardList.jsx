@@ -49,7 +49,7 @@ export default class CardList extends React.Component {
         </div>
         <div className="CardList__content">
           { this.props.cards.map( card => {
-            return <Card key={card.id} card={card} list={this.props.title} onClick={this.props.openModal} />
+            return <Card key={card._id} card={card} list={this.props.title} onClick={this.props.openModal} />
           })}
         </div>
         {this.props.canAddCards && (

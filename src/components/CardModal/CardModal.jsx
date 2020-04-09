@@ -26,7 +26,7 @@ export default function CardModal(props) {
           <div className="CardModel__users-content">
             {card? card.members.map(member => {
               return (
-                <div key={member.id}className="CardModal__user-icon"><span>{member.firstName.charAt(0)}{member.lastName.charAt(0)}</span></div>
+                <div key={member._id}className="CardModal__user-icon"><span>{member.firstName.charAt(0)}{member.lastName.charAt(0)}</span></div>
               )
             }):''}
           </div>
@@ -48,7 +48,7 @@ export default function CardModal(props) {
 
       <div className="modal-comments">
         {card? card.comments.map(comment => (
-          <div key={comment.id} className="CardModal__comment-post">
+          <div key={comment._id} className="CardModal__comment-post">
             <i className="far fa-user"></i>
             <p>{comment.content}</p>
           </div>
