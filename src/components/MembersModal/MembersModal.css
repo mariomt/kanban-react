@@ -1,0 +1,91 @@
+.MembersModal__title p{
+  text-align: center;
+  color: #5e6c84;
+}
+
+.MembersModal__title {
+  border-bottom: 1px solid rgba(0, 0,0, 0.5);
+  margin-bottom: 10px;
+}
+
+.MembersModal__content input {
+  box-sizing: border-box;
+  padding-left: 10px;
+  width: 100%;
+  height: 30px;
+  margin-bottom: 10px;
+  outline: none;
+}
+
+.MembersModal__content input:focus {
+  outline: 2px solid var(--primary-color);
+}
+
+.members-title {
+  margin-bottom: 10px;
+}
+
+.MembersModal__cards-section-title {
+  margin-bottom: 10px;
+}
+
+.MembersModal__content p{
+  font-size: .9em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin:0;
+  margin-bottom: 10px;
+  color: #5e6c84;
+}
+
+.MembersModal__cards-section-members-wraper {
+  max-height: 280px;
+  overflow-y: auto;
+}
+
+.MembersModal__member-card {
+  display: flex;
+  margin-bottom: 3px;
+}
+
+.MembersModal__member-card:hover {
+  background-color: rgba(141, 141, 141, 0.1);
+  cursor: pointer;
+}
+
+.MembersModal__member-name {
+  display: flex;
+  align-items: center;
+  flex: 1 1 auto;
+}
+
+.MembersModal__member-name p {
+  margin: 0;
+  margin-left: 5px;
+}
+.MembersModal__member-icon {
+  flex: 0 36px;
+  font-weight: 700;
+  font-size: .8em;
+}
+
+.MembersModal__member-icon .circle-icon {
+  background-color: rgba(0, 0,0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+}
+
+.MembersModal__member-is-selected {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.MembersModal__member-is-selected i {
+  margin-right: 5px;
+  color: var(--secondary-color);
+}

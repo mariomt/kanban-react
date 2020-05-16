@@ -33,7 +33,7 @@ export default class CardList extends React.Component {
     this.setState({ addCard: false, titleCard: '' });
   }
   saveNewCard = () => {
-    console.log(this.state.titleCard)
+    this.props.crateTask(this.state.titleCard, this.props.list);
   }
 
   handleOnchange = e =>{
@@ -45,11 +45,11 @@ export default class CardList extends React.Component {
     return (
       <div className="CardList">
         <div className="CardList__title">
-          <h3>{this.props.title}</h3>
+          <h3>{this.props.list.title}</h3>
         </div>
         <div className="CardList__content">
-          { this.props.cards.map( card => {
-            return <Card key={card._id} card={card} list={this.props.title} onClick={this.props.openModal} />
+          { this.props.list.tasks.map( card => {
+            return <Card key={card._id} card={card} list={this.props.list} onClick={this.props.openModal} />
           })}
         </div>
         {this.props.canAddCards && (

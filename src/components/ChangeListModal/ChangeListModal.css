@@ -1,0 +1,108 @@
+.ChangeListModal {
+  margin-right: auto;
+  background-color: white;
+  width: 100%;
+  max-width: 300px;
+  padding: 0 15px 15px;
+  border-radius: 2px;
+  box-shadow: 0 1px 5px -2px rgba(0, 0,0, 0.7);
+}
+
+.ChangeListModal__title p{
+  text-align: center;
+  color: #5e6c84;
+}
+
+.ChangeListModal__title {
+  border-bottom: 1px solid rgba(0, 0,0, 0.5);
+}
+
+
+.form-grid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.label {
+  display: block;
+  font-size: .9em;
+  margin-bottom: 0;
+  color: #5e6c84;
+}
+
+.button-link {
+  background-color: rgba(9,30,66,.04);
+  box-shadow: none;
+  border: none;
+  border-radius: 3px;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: block;
+  height: 32px;
+  margin-top: 8px;
+  max-width: 300px;
+  overflow: hidden;
+  padding: 6px 12px;
+  position: relative;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  user-select: none;
+  white-space: nowrap;
+  transition-property: background-color,border-color,box-shadow;
+  transition-duration: 85ms;
+  transition-timing-function: ease;
+  margin-bottom: 15px;
+}
+
+.button-link.setting {
+  height: 48px;
+  position: relative;
+  color:#172b4d;
+}
+
+.button-link.setting:hover {
+  background-color: rgba(0,0,0,0.1);
+}
+
+.space-right {
+  margin-right: 8px;
+}
+
+.threequaters {
+  flex-grow: 3;
+}
+
+.button-link.setting select {
+  position: absolute;
+  top:0;
+  left: 0;
+  height: 50px;
+  width: 100%;
+  opacity: 0;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.submit {
+  background-color: #5aac44;
+  border:none;
+  cursor: pointer;
+  font-size: 1em;
+  padding: 10px 20px;
+  color: var(--primary-text-color);
+  border-radius: 3px;
+  outline: none;
+}
+
+.submit:hover {
+  background-color: #55a140;
+}
+
+.ChangeListModal__content p{
+  font-size: .9em;
+  color: #5e6c84;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
